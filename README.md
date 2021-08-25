@@ -1,12 +1,14 @@
 # Credit_Risk_Analysis
-Boot camp project using Jupyter Notebooks and Pandas on mock dataset to evaluate machine learning models.
+The following is a boot camp project using Jupyter Notebooks and Pandas on a mock dataset to evaluate machine learning models.
 
 
 # Overview of the Project
 
 Fast Lending is a peer-to-peer lender that would like to use machine learning to make lending decisions faster and with better risk prediction.  The purpose of this project was to test how various machine learning models performed on the loan dataset provided.
 
-Each of the models were trained on 75% of the dataset and then tested on the remaining 25%.  All datasets received the same training and testing data.  Various performance metrics of each model were captured and results are shown below.
+Each of the models were trained on 75% of the dataset and then tested on the remaining 25%.  All models received the same initial training and testing data.  Then the models were applied to the data.  Various performance metrics of each model were captured and results are shown below.
+
+Because the number of loans in the low-risk class far outnumbered those in the high-risk class, various resampling methods were used to address this class imbalance.  These methods are designed to help improve the models' performance at predicting high-risk loans.
 
 
 # Results
@@ -74,7 +76,7 @@ Combination Over & Undersampling, Synthetic Minority Oversampling TEchnique & Ed
 
 ## Discussion of Results
 
-There was large variance seen between the performance of the various models.  In general, as more advanced models were utilized, performance improved.  In some areas, all models performed well.  On the other hand, all struggled in other areas.  The ensemble models both performed at higher levels than other models.  
+There was a large variance seen between the performance of the various models.  In general, as more advanced models were utilized, performance improved.  In some areas, all models performed well.  On the other hand, all struggled in other areas.  The ensemble models both performed at higher levels than other models.  
 
 
 ## Balanced Accuracy
@@ -93,16 +95,16 @@ The recall, or sensitivity, scores trended lower.  This score is representative 
 
 ## High-Risk Loans
 
-For our current use case however, the primary goal is to predict high risk loan applications.  In the dataset provided, 68,470 loans (99.5%) were low risk while 347 (0.05%) were high risk.
+Our primary goal, however, is to predict high risk loan applications.  In the dataset provided, 68,470 loans (99.5%) were low risk while 347 (0.05%) were high risk.
 
-When looking at high-risk loans, our models did not perform as well.  The testing dataset contained 101 high-risk loans.  The precision of correctly predicting high-risk loans was very low, ranging from 0.01 (four models) to 0.09 (Easy Ensemble AdaBoost Classifier).0  In other words, even the best model predicted far more high-risk applications than there were in reality.  That model, Easy Ensemble AdaBoost Classifier, predicted 1,076 high-risk loans but only 93 of those were actually high risk.  There were 983 false positives and the model missed 8 loans that were actually high risk.
+When looking at high-risk loans, our models did not perform as well.  The testing dataset contained 101 high-risk loans.  The precision of correctly predicting high-risk loans was very low, ranging from 0.01 (four models) to 0.09 (Easy Ensemble AdaBoost Classifier).  In other words, even the best model predicted far more high-risk applications than there were in reality.  That model, Easy Ensemble AdaBoost Classifier, predicted 1,076 high-risk loans but only 93 of those were actually high risk.  There were 983 false positives and the model missed 8 loans that were actually high risk.
 
-Performance on recall was better for all models, especially for high-risk loans.  Performance ranged from 0.69 (undersampling) – 0.92 (Easy Ensemble AdaBoost Classifier.  For the top scoring model, this means that of those loans that were actually high risk, the model successfully identified 92% as such, missing 8% of the high-risk loans.
+Performance on recall was better for all models, especially for high-risk loans.  Performance ranged from 0.69 (undersampling) – 0.92 (Easy Ensemble AdaBoost Classifier).  For the top scoring model, this means that of those loans that were actually high risk, the model successfully identified 92% as such, missing 8% of the high-risk loans.
 
 
 ## Recommendation for Model to Adopt
 
-Overall, the Easy Ensemble AdaBoost Classifier performed better than any other model.  It had the highest performance in all categories reviewed (other than low risk precision where all models tied with 1.00).  It is recommended that this model be utilized to help streamline the lending process improving turnaround times and enhancing risk prediction.  
+Overall, the Easy Ensemble AdaBoost Classifier performed better than any other model.  It had the highest performance in all categories reviewed (other than low risk precision where all models tied with 1.00).  It is recommended that this model be utilized to help streamline the lending process, leading to improved turnaround times and enhanced risk prediction.  
 
 However, manual processing will still be required.  Despite it having the top performance, Easy Ensemble AdaBoost Classifier generated a large number of false positives in testing.  This means that the model predicted the loans to be high risk but they were actually low risk.  Given this high number of missed predictions, it is recommended that all applications that are predicted to be high risk should still be closely scrutinized before final approval.  
 
