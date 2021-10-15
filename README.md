@@ -1,4 +1,4 @@
-# Credit_Risk_Analysis
+# Credit Risk Analysis
 The following project uses Jupyter Notebooks and Pandas on a mock dataset to evaluate machine learning models.
 
 
