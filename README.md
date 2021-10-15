@@ -1,5 +1,5 @@
 # Credit_Risk_Analysis
-The following is a boot camp project using Jupyter Notebooks and Pandas on a mock dataset to evaluate machine learning models.
+The following project uses Jupyter Notebooks and Pandas on a mock dataset to evaluate machine learning models.
 
 
 # Overview of the Project
